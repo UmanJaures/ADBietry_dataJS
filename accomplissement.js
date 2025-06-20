@@ -1,29 +1,41 @@
-// Mobile Menu Toggle 
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-const dropdowns = document.querySelectorAll('.dropdown');
+// Mobile Menu Toggle
+       function initMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
-    mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
-});
-
-dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', (e) => {
-        if (window.innerWidth <= 992) {
-            // Ne pas bloquer si on clique sur un lien dans le sous-menu
-            if (e.target.tagName.toLowerCase() === 'a') return;
-
-            e.preventDefault(); // Bloque uniquement pour ouvrir le sous-menu
-
-            dropdown.classList.toggle('open');
-            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-            dropdownMenu.classList.toggle('active');
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         }
     });
-});
 
+    dropdowns.forEach(dropdown => {
+        // On cible le lien parent (qui ouvre le dropdown)
+        const toggleLink = dropdown.querySelector('a');
+
+        toggleLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                const href = toggleLink.getAttribute('href');
+
+                // On bloque seulement si href="#" ou href="javascript:void(0)"
+                if (href === '#' || href === 'javascript:void(0)') {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                    dropdownMenu.classList.toggle('active');
+                }
+                // Sinon c'est un vrai lien, on laisse passer la navigation normalement
+            }
+        });
+    });
+}
 
         // Header Scroll Effect
         window.addEventListener('scroll', () => {

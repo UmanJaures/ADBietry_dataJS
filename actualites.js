@@ -403,45 +403,44 @@
             }, 5000);
         }
 
-        // Navigation mobile
-       
-         function initNavigation() {
+ // Mobile Menu Toggle
+       function initMobileMenu() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const dropdowns = document.querySelectorAll('.dropdown');
 
-    // Toggle du menu mobile
     mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
-        mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
 
-    // Gestion des dropdowns sur mobile
     dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
-                // Ne pas bloquer si on clique sur un lien dans le sous-menu
-                if (e.target.tagName.toLowerCase() === 'a') return;
+        // On cible le lien parent (qui ouvre le dropdown)
+        const toggleLink = dropdown.querySelector('a');
 
-                e.preventDefault();
-                dropdown.classList.toggle('open');
-                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-                dropdownMenu.classList.toggle('active');
+        toggleLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                const href = toggleLink.getAttribute('href');
+
+                // On bloque seulement si href="#" ou href="javascript:void(0)"
+                if (href === '#' || href === 'javascript:void(0)') {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                    dropdownMenu.classList.toggle('active');
+                }
+                // Sinon c'est un vrai lien, on laisse passer la navigation normalement
             }
         });
     });
-
-            // Effet de défilement de l'en-tête
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        }
+}
 
         // Animations au défilement
         function initScrollAnimations() {
