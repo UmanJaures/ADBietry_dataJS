@@ -11,7 +11,7 @@
                 date: "15-17 septembre 2023"
             },
             {
-                image: "https://images.unsplash.com/photo-1463467575991-d2c9a08c85a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+                image: "https://i.postimg.cc/DymfRn2b/buildg.jpg",
                 title: "Campagne d'Évangélisation",
                 date: "1-10 octobre 2023"
             }
@@ -31,13 +31,13 @@
                 link: "https://facebook.com/event"
             },
             {
-                image: "https://images.unsplash.com/photo-1581368135153-a506cf526e5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                image: "https://i.postimg.cc/tCk10pn3/benevolat.avif",
                 title: "Programme de Bénévolat Communautaire",
                 description: "Rejoignez-nous chaque samedi matin pour servir notre communauté",
                 link: "https://facebook.com/event"
             },
             {
-                image: "https://images.unsplash.com/photo-1503177119275-0aa32f3a1f88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                image: "https://i.postimg.cc/5NrX9ppy/ecodim.jpg",
                 title: "Cours de Catéchèse pour Enfants",
                 description: "Inscriptions ouvertes pour la nouvelle année scolaire",
                 link: "https://facebook.com/event"
@@ -98,6 +98,10 @@
             },
             {
                 image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1996&q=80",
+                title: "Structure principale en construction"
+            },
+            {
+                image: "https://i.postimg.cc/Yq74y88m/cst.jpg",
                 title: "Structure principale en construction"
             },
             {
