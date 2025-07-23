@@ -3,17 +3,20 @@
             {
                 image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1999&q=80",
                 title: "Concert Gospel de Noël",
-                date: "24 décembre 2023"
+                date: "24 décembre 2023",
+                link: "#"
             },
             {
                 image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
                 title: "Retraite Spirituelle Annuelle",
-                date: "15-17 septembre 2023"
+                date: "15-17 septembre 2023",
+                link: "#"
             },
             {
                 image: "https://i.postimg.cc/DymfRn2b/buildg.jpg",
                 title: "Campagne d'Évangélisation",
-                date: "1-10 octobre 2023"
+                date: "1-10 octobre 2023",
+                link: "#"
             }
         ];
 
@@ -129,14 +132,16 @@
 
             // Création des slides
             eventSlides.forEach((slide, index) => {
-                const slideElement = document.createElement('div');
+               const slideElement = document.createElement('a');
                 slideElement.className = 'carousel-slide';
+                slideElement.href = slide.link;
+                slideElement.target = "_blank";
                 slideElement.innerHTML = `
-                    <img src="${slide.image}" alt="${slide.title}">
-                    <div class="carousel-caption">
-                        <h3>${slide.title}</h3>
-                        <p>${slide.date}</p>
-                    </div>
+            <img src="${slide.image}" alt="${slide.title}">
+               <div class="carousel-caption">
+              <h3>${slide.title}</h3>
+             <p>${slide.date}</p>
+                  </div>
                 `;
                 carouselTrack.appendChild(slideElement);
 
