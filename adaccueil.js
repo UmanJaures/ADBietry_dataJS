@@ -40,7 +40,7 @@
                 position: 'Pasteur du temple la Grace'
             },
             {
-                image: 'https://i.postimg.cc/Bn4k8gsT/pasteur-gueu-2.jpg',
+                image: 'https://i.postimg.cc/zfPM3HJ8/pasteur-gueu-2-1.jpg',
                 name: 'Pasteur Gueu',
                 position: 'Pasteur de beatitude'
             },
