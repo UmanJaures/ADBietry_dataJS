@@ -1,7 +1,7 @@
   // Données pour le slider (modifiable sans redéploiement)
         const sliderData = [
             {
-                backgroundImage: 'https://i.postimg.cc/Nf6SHZpR/church1.jpg',
+                backgroundImage: 'https://i.postimg.cc/bvmCWc7r/BIENVENUE.png',
                 title: 'Une Église pour tous',
                 subtitle: 'Venez vivre une expérience spirituelle transformatrice',
                 buttonText: 'En savoir plus',
@@ -40,7 +40,7 @@
                 position: 'Pasteur du temple la Grace'
             },
             {
-                image: 'https://i.postimg.cc/gktS8d3X/pastor.jpg',
+                image: 'https://i.postimg.cc/Bn4k8gsT/pasteur-gueu-2.jpg',
                 name: 'Pasteur Gueu',
                 position: 'Pasteur de beatitude'
             },
